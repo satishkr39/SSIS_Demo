@@ -1,0 +1,769 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/19/2022 9:24:40 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USBLRSATISSING1"
+  DTS:CreatorName="US\satissingh"
+  DTS:DTSID="{5D4CBB4A-BF1E-4060-BD01-91184E68C32A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{7CED408B-672E-4CB3-867D-D8B17DD25738}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[USBLRSATISSING1\SQL_DEV_SERVER.AdventureWorks2019]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1DEAC9D5-48E5-405D-A86C-B84ACC3BC49D}"
+      DTS:ObjectName="USBLRSATISSING1\SQL_DEV_SERVER.AdventureWorks2019">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=USBLRSATISSING1\SQL_DEV_SERVER;Initial Catalog=AdventureWorks2019;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3C68149D-BF99-47B6-887D-9B72B81C1F73}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Person].[Person]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[USBLRSATISSING1\SQL_DEV_SERVER.AdventureWorks2019]"
+                  connectionManagerRefId="Package.ConnectionManagers[USBLRSATISSING1\SQL_DEV_SERVER.AdventureWorks2019]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PersonType]"
+                      length="2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonType]"
+                      name="PersonType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      length="8"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      name="MiddleName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                      dataType="i4"
+                      name="BusinessEntityID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      name="PersonType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
+                      dataType="bool"
+                      name="NameStyle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suffix]"
+                      dataType="wstr"
+                      length="10"
+                      name="Suffix" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmailPromotion]"
+                      dataType="i4"
+                      name="EmailPromotion" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AdditionalContactInfo]"
+                      dataType="nText"
+                      name="AdditionalContactInfo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Demographics]"
+                      dataType="nText"
+                      name="Demographics" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PersonType]"
+                      name="PersonType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                      name="MiddleName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Row Sampling"
+              componentClassID="Microsoft.RowSampling"
+              contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
+              name="Row Sampling">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of rows in the sample."
+                  expressionType="Notify"
+                  name="SamplingValue">10</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the seed for the random number generator."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1]"
+                  name="Row Sampling Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1].Columns[PersonType]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="PersonType"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Title"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1].Columns[MiddleName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="MiddleName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output]"
+                  name="Sampling Selected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">true</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[PersonType]"
+                      name="PersonType">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[Title]"
+                      name="Title">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[FirstName]"
+                      name="FirstName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[MiddleName]"
+                      name="MiddleName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output].Columns[LastName]"
+                      name="LastName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output]"
+                  name="Sampling Unselected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">false</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[PersonType]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[PersonType]"
+                      name="PersonType">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonType]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[Title]"
+                      name="Title">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[FirstName]"
+                      name="FirstName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[MiddleName]"
+                      name="MiddleName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output].Columns[LastName]"
+                      name="LastName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Unselcted Ouput"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Unselcted Ouput"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Unselcted Ouput.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Unselcted Ouput.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Unselcted Ouput.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Unselcted Ouput.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Unselcted Ouput.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Unselcted Ouput.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Unselcted Ouput.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Unselcted Ouput.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Unselcted Ouput.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Row Sampling.Inputs[Row Sampling Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sampling Selected Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Sampling Selected Output"
+              startId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Selected Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sampling Unselected Output]"
+              endId="Package\Data Flow Task\Unselcted Ouput.Inputs[Derived Column Input]"
+              name="Sampling Unselected Output"
+              startId="Package\Data Flow Task\Row Sampling.Outputs[Sampling Unselected Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="378.333318299718,190.666668181949" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="293.6,41.6"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="357.499990562598,62.6000000206629" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="315.833323167431,286.866668946478" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Data Flow Task\Unselcted Ouput"
+          TopLeft="588.333312339254,291.400001508395" />
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\Data Flow Task\Row Sampling"
+          TopLeft="415.833316809602,159.466667933994" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="504.299990562598,104.200000020663">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.6666737529962,55.2666679133309"
+              Start="0,0"
+              End="-15.6666737529962,47.7666679133309">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6333339566655" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6333339566655"
+                    Point2="0,27.6333339566655"
+                    Point3="-4,27.6333339566655" />
+                  <mssgle:LineSegment
+                    End="-11.6666737529962,27.6333339566655" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.6666737529962,27.6333339566655"
+                    Point2="-15.6666737529962,27.6333339566655"
+                    Point3="-15.6666737529962,31.6333339566655" />
+                  <mssgle:LineSegment
+                    End="-15.6666737529962,47.7666679133309" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sampling Selected Output]"
+          TopLeft="488.633316809602,201.066667933994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96.3999936421714,85.8000010124839"
+              Start="0,0"
+              End="-96.3999936421714,78.3000010124839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.900000506242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.900000506242"
+                    Point2="0,42.900000506242"
+                    Point3="-4,42.900000506242" />
+                  <mssgle:LineSegment
+                    End="-92.3999936421714,42.900000506242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-92.3999936421714,42.900000506242"
+                    Point2="-96.3999936421714,42.900000506242"
+                    Point3="-96.3999936421714,46.900000506242" />
+                  <mssgle:LineSegment
+                    End="-96.3999936421714,78.3000010124839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-114.830035883586,47.900000506242,133.260078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sampling Unselected Output]"
+          TopLeft="511.566650142935,201.066667933994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154.766662196319,90.3333335744006"
+              Start="0,0"
+              End="154.766662196319,82.8333335744006">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7224638661151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.7224638661151"
+                    Point2="0,36.7224638661151"
+                    Point3="4,36.7224638661151" />
+                  <mssgle:LineSegment
+                    End="150.766662196319,36.7224638661151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="150.766662196319,36.7224638661151"
+                    Point2="154.766662196319,36.7224638661151"
+                    Point3="154.766662196319,40.7224638661151" />
+                  <mssgle:LineSegment
+                    End="154.766662196319,82.8333335744006" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.9262803169094,41.7224638661151,126.9141015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

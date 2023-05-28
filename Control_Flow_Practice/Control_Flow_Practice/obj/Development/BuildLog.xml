@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ProjectInfo>
+    <Name>Control_Flow_Practice</Name>
+    <LastWriteTime>2023-05-28T07:22:35.0755721Z</LastWriteTime>
+    <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+  </ProjectInfo>
+  <LastBuildInfos>
+    <ProjectBuildItemInfo>
+      <Name>01_BulkInsert.dtsx</Name>
+      <LastWriteTime>2023-05-28T07:22:34.1377359Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+  </LastBuildInfos>
+</BuildLog>

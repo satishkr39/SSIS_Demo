@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/25/2023 11:37:58 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USKOLSATISSIN4"
+  DTS:CreatorName="US\satissingh"
+  DTS:DTSID="{37F37FFC-DCF0-499B-A858-EE73030744C9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CacheTransform"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{B7C31A26-90AD-46A1-84A1-47620066BD8E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Data Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3F3CDA25-A4C9-4B56-A2B7-BA3547DF01AF}"
+      DTS:ObjectName="Data Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Initial Catalog=AdventureWorks2019;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-CacheTransform-{3F3CDA25-A4C9-4B56-A2B7-BA3547DF01AF}Data Connection;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

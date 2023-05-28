@@ -1,0 +1,103 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/28/2023 12:17:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="USKOLSATISSIN4"
+  DTS:CreatorName="US\satissingh"
+  DTS:DTSID="{4A94A325-B248-4367-9D21-B8145B15790D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Control_Flow"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{DC844C0F-6EA0-49B2-8DCB-55C671F06858}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Data Connection1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5A2395AC-7AA0-4307-896E-87CFA8DF91C2}"
+      DTS:ObjectName="Data Connection1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Initial Catalog=Test;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Control_Flow-{5A2395AC-7AA0-4307-896E-87CFA8DF91C2}Data Connection1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Employee.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{1B8DD47C-1FA4-4108-9029-636740975369}"
+      DTS:ObjectName="Employee.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\satissingh\Documents\source\repos\Control_Flow_Practice\Control_Flow_Practice\Employee.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Employee.csv 1]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{92921F11-84FA-42E5-9371-8C5D2CF47792}"
+      DTS:ObjectName="Employee.csv 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\satissingh\Documents\source\repos\Control_Flow_Practice\Control_Flow_Practice\Employee.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Employee.csv 2]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{F1A09AE3-055A-4F86-AB87-DC0597F6E2B8}"
+      DTS:ObjectName="Employee.csv 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\satissingh\Documents\source\repos\Control_Flow_Practice\Control_Flow_Practice\Employee.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Bulk Insert Task"
+      DTS:CreationName="Microsoft.BulkInsertTask"
+      DTS:Description="Bulk Insert Task"
+      DTS:DTSID="{A01EA02E-BF5B-4B79-B620-CA8F7AE8D5CE}"
+      DTS:ExecutableType="Microsoft.BulkInsertTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Bulk Insert Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <BulkInsertTask:BulkInsertTaskData
+          BulkInsertTask:SourceConnectionName="{F1A09AE3-055A-4F86-AB87-DC0597F6E2B8}"
+          BulkInsertTask:DestinationConnectionName="{5A2395AC-7AA0-4307-896E-87CFA8DF91C2}"
+          BulkInsertTask:DestinationTableName="[dbo].[EMPLOYEE_BULK_INSERT]"
+          BulkInsertTask:FieldTerminator="Comma {,}" xmlns:BulkInsertTask="www.microsoft.com/sqlserver/dts/tasks/bulkinserttask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Bulk Insert Task"
+          TopLeft="345.833314437834,121.333332489596" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
