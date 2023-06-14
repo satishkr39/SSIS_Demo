@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<DTSConfiguration>
+	<DTSConfigurationHeading>
+		<DTSConfigurationFileInfo GeneratedBy="US\satissingh" GeneratedFromPackageName="Package" GeneratedFromPackageID="{3DE2B9A0-6537-45C3-ADA3-8344DDE133A4}" GeneratedDate="6/5/2023 1:12:06 PM"/>
+	</DTSConfigurationHeading>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[Description]" ValueType="String">
+		<ConfiguredValue/>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[EvaluateAsExpression]" ValueType="Boolean">
+		<ConfiguredValue>0</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[Expression]" ValueType="String">
+		<ConfiguredValue/>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[IncludeInDebugDump]" ValueType="Boolean">
+		<ConfiguredValue>0</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[Name]" ValueType="String">
+		<ConfiguredValue>Color</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[Namespace]" ValueType="String">
+		<ConfiguredValue>User</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[RaiseChangedEvent]" ValueType="Boolean">
+		<ConfiguredValue>0</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[ReadOnly]" ValueType="Boolean">
+		<ConfiguredValue>0</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::Color].Properties[Value]" ValueType="String">
+		<ConfiguredValue>Blue</ConfiguredValue>
+	</Configuration>
+</DTSConfiguration>

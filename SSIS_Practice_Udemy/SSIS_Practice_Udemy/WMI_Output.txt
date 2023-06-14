@@ -1,0 +1,2 @@
+FileSystem, NTFS
+FreeSpace, 320632647680
