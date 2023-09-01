@@ -2,13 +2,113 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>Control_Flow_Practice</Name>
-    <LastWriteTime>2023-05-28T07:22:35.0755721Z</LastWriteTime>
+    <LastWriteTime>2023-06-04T07:40:01.5864478Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>01_BulkInsert.dtsx</Name>
-      <LastWriteTime>2023-05-28T07:22:34.1377359Z</LastWriteTime>
+      <LastWriteTime>2023-05-28T08:02:06.3603231Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>02_SequenceContainer.dtsx</Name>
+      <LastWriteTime>2023-05-28T08:07:35.8759322Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>03_ProcessTask.dtsx</Name>
+      <LastWriteTime>2023-05-28T08:26:38.1661811Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>04_ExecutePackageParent.dtsx</Name>
+      <LastWriteTime>2023-05-29T07:35:26.500597Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>04_ExecutePackageChild.dtsx</Name>
+      <LastWriteTime>2023-05-29T07:33:12.2080832Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>05_FileSytemDemo.dtsx</Name>
+      <LastWriteTime>2023-05-29T07:55:20.0576833Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>06_WebServiceTask.dtsx</Name>
+      <LastWriteTime>2023-05-29T08:02:13.7757161Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>07_XMLTask.dtsx</Name>
+      <LastWriteTime>2023-05-29T10:19:18.1243602Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>08_DataProfiling.dtsx</Name>
+      <LastWriteTime>2023-05-29T10:21:05.5755496Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>09_TransferDatabase.dtsx</Name>
+      <LastWriteTime>2023-05-29T10:34:02.0867135Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>10_TransferSQLServerObject.dtsx</Name>
+      <LastWriteTime>2023-06-02T06:31:15.6322769Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>11_TransferMasterStoredProc.dtsx</Name>
+      <LastWriteTime>2023-06-02T06:36:30.836228Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>12_TransferJobs.dtsx</Name>
+      <LastWriteTime>2023-06-02T06:40:02.4940288Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>13_TransferLogins.dtsx</Name>
+      <LastWriteTime>2023-06-02T06:59:45.883661Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>14_TransferErrorMessage.dtsx</Name>
+      <LastWriteTime>2023-06-02T07:03:54.5125141Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>15_ForLoopContainer.dtsx</Name>
+      <LastWriteTime>2023-09-01T04:43:57.7474609Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>16_ForEachFIleLoopEnumeration.dtsx</Name>
+      <LastWriteTime>2023-06-03T15:34:39.3491788Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>17_ForEachItemEnumerator.dtsx</Name>
+      <LastWriteTime>2023-06-03T15:57:33.1520021Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>18_ForEachVariableEnumerator.dtsx</Name>
+      <LastWriteTime>2023-06-04T07:06:03.1706983Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>19_ForEachSMOEnumeration.dtsx</Name>
+      <LastWriteTime>2023-06-04T07:14:23.9669647Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>20_ForEachADOEnumerator.dtsx</Name>
+      <LastWriteTime>2023-06-04T07:32:53.9685263Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
